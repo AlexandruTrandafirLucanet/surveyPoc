@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   items$: Observable<Item[]> = this.dataService.getData()
     .pipe(
       take(1),
-      map((items: Item[]) => [items[0]])
+      // map((items: Item[]) => [items[0]])
     );
   items: Item[] = [];
   form: FormGroup = new FormGroup({});
@@ -42,12 +42,18 @@ export class AppComponent implements OnInit {
     const group: { [key: string]: any } = {};
 
     for (let item of items) {
-      const fieldControls: FormGroup[] = [];
+      group[item.itemKey] = this.createFormArray(item.children);
+    };
 
-      for (const field of item.children) {
+    return this.fb.group(group);
+  }
+
+  createFormArray(fields: Field[]): FormArray {
+    const fieldControls: FormGroup[] = [];
+      for (const field of fields) {
         const controlGroup: { [key: string]: any } = {};
 
-        controlGroup[field.id] = this.fb.control(null) // [null, field.isNillable ? null : Validators.required];
+        controlGroup[field.id] = this.fb.control(null);
         if (field.children?.length > 0) {
           controlGroup['children'] = this.createFormArray(field.children);
         }
@@ -55,21 +61,6 @@ export class AppComponent implements OnInit {
         fieldControls.push(this.fb.group(controlGroup));
       };
 
-      group[item.itemKey] = this.fb.group(fieldControls);
-    };
-
-    return this.fb.group(group);
-  }
-
-  createFormArray(fields: Field[]): FormArray {
-    const controls = fields.map(field => {
-      if (field.children?.length > 0) {
-        return this.createFormArray(field.children);
-      } else {
-        return this.fb.control(null) // [null, field.isNillable ? null : Validators.required];
-      }
-    });
-
-    return this.fb.array(controls);
+    return this.fb.array(fieldControls);
   }
 }

@@ -1,1 +1,39 @@
-<p>form-generator works!</p>
+<div class="field" [formGroup]="form" *ngFor="let field of children; let j = index">
+        <div [formGroupName]="j" class="mb-3">
+            <ng-container *ngIf="!field.children">
+                <ng-container *ngIf="field.typeNameShort === 'text'">
+                    <label class="form-label">{{ field.label }}</label>
+                    <input class="form-control" [formControlName]="field.id" type="text" />
+                </ng-container>
+                <ng-container *ngIf="field.typeNameShort === 'integer'">
+                    <label class="form-label">{{ field.label }}</label>
+                    <input class="form-control" [formControlName]="field.id" type="number" />
+                </ng-container>
+                <ng-container *ngIf="field.typeNameShort === 'enumeration'">
+                    <label class="form-label">{{ field.label }}</label>
+                    <select class="form-select" [formControlName]="field.id">
+                        <option selected>Select item</option>
+                        <option *ngFor="let option of field.enums" [value]="option.key">
+                            {{ option.value }}
+                        </option>
+                    </select>
+                </ng-container>
+                <ng-container *ngIf="field.typeNameShort === 'boolean'">
+                    <label class="form-label"><input class="form-control" class="form-check-input" [formControlName]="field.id" type="checkbox" /> {{ field.label }}</label>
+                </ng-container>
+                <ng-container *ngIf="field.typeNameShort === 'textBlock'">
+                    <label class="form-label">{{ field.label }}</label>
+                    <textarea class="form-control" [formControlName]="field.id" cols="30" rows="2"></textarea>
+                </ng-container>
+                <ng-container *ngIf="field.typeNameShort === 'date'">
+                    <label class="form-label">{{ field.label }}</label>
+                    <input class="form-control" [formControlName]="field.id" type="text" />
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="field.children && field.children.length">
+                <div formGroupName="children">
+                    <app-form-generator [children]="field.children"/>
+                </div>
+            </ng-container>
+        </div>
+</div>

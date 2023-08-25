@@ -1,53 +1,38 @@
-<pre>
-  {{ form.value | json }}
-</pre>
-
-<form [formGroup]="form">
-  <ng-container *ngFor="let item of items$ | async">
-    <h2>{{ item.displayName }}</h2>
-    <ng-container formArrayName="{{ item.itemKey }}">
-      <ng-container *ngFor="let field of item.children; let j = index">{{j}}
-          <ng-container [formGroupName]="j">
-              <label>{{ field.label }}</label>
-              <input [formControlName]="field.id" />
-              <ng-container *ngIf="field.children && field.children.length">
-                <app-form-generator [children]="field.children"/>
-              </ng-container>
-          </ng-container>
-      </ng-container>
-    </ng-container>
-  </ng-container>
-</form>
-
-<!-- <ng-container *ngFor="let field of item.fields">
-  <ng-container *ngIf="field.type === 'text'">
-    <label>{{ field.displayName }}</label>
-    <input type="text" [formControlName]="field.name" />
-  </ng-container>
-  <ng-container *ngIf="field.type === 'number'">
-    <label>{{ field.displayName }}</label>
-    <input type="number" [formControlName]="field.name" />
-  </ng-container>
-  <ng-container *ngIf="field.type === 'select'">
-    <label>{{ field.displayName }}</label>
-    <select [formControlName]="field.name">
-      <option *ngFor="let option of field.options" [value]="option.value">
-        {{ option.displayName }}
-      </option>
-    </select>
-  </ng-container>
-  <ng-container *ngIf="field.type === 'radio'">
-    <label>{{ field.displayName }}</label>
-    <ng-container *ngFor="let option of field.options">
-      <input type="radio" [formControlName]="field.name" [value]="option.value" />
-      {{ option.displayName }}
-    </ng-container>
-  </ng-container>
-  <ng-container *ngIf="field.type === 'checkbox'">
-    <label>{{ field.displayName }}</label>
-    <ng-container *ngFor="let option of field.options">
-      <input type="checkbox" [formControlName]="field.name" [value]="option.value" />
-      {{ option.displayName }}
-    </ng-container>
-  </ng-container>
-</ng-container> -->
+<header>
+  <nav class="navbar navbar-expand-md bg-body-tertiary mb-5" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">ESG</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Custom Form</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <form [formGroup]="form">
+        <ng-container *ngFor="let item of items$ | async">
+          <h2>{{ item.displayName }}</h2>
+          <div [formGroupName]="item.itemKey">
+            <app-form-generator [children]="item.children"/>
+          </div>
+        </ng-container>
+      </form>
+    </div>
+    <div class="col-12 col-md-6">
+      <pre>
+        <code>
+          {{ form.value | json }}
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
