@@ -1,14 +1,17 @@
 <header>
   <nav class="navbar navbar-expand-md bg-body-tertiary mb-5" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand" href="#">ESG</a>
+      <a class="navbar-brand" routerLink="/">ESG</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Custom Form</a>
+            <a routerLink="/custom-form" routerLinkActive="active" class="nav-link">Custom</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/surveyjs" routerLinkActive="active" class="nav-link">SurveyJS</a>
           </li>
         </ul>
       </div>
@@ -16,23 +19,5 @@
   </nav>
 </header>
 <div class="container">
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <form [formGroup]="form">
-        <ng-container *ngFor="let item of items$ | async">
-          <h2>{{ item.displayName }}</h2>
-          <div [formGroupName]="item.itemKey">
-            <app-form-generator [children]="item.children"/>
-          </div>
-        </ng-container>
-      </form>
-    </div>
-    <div class="col-12 col-md-6">
-      <pre>
-        <code>
-          {{ form.value | json }}
-        </code>
-      </pre>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>

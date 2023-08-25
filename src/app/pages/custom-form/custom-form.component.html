@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-12 col-md-6">
+      <form [formGroup]="form">
+        <ng-container *ngFor="let item of items$ | async">
+          <h2>{{ item.displayName }}</h2>
+          <div [formGroupName]="item.itemKey">
+            <app-form-generator [children]="item.children"/>
+          </div>
+        </ng-container>
+      </form>
+    </div>
+    <div class="col-12 col-md-6">
+      <pre>
+        <code>
+          {{ form.value | json }}
+        </code>
+      </pre>
+    </div>
+  </div>
