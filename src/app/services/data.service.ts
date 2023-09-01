@@ -29,7 +29,10 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   public getData(): Observable<Item[]> {
-    return this.http.get('assets/data/response.json') as Observable<Item[]>;
+    // return this.http.get('assets/data/response.json') as Observable<Item[]>;
+    return this.http.get('assets/data/compiledSamples-Final.json') as Observable<Item[]>;
+    // return this.http.get('assets/data/response-table1-mock.json') as Observable<Item[]>;
+    // return this.http.get('assets/data/response-table2-mock.json') as Observable<Item[]>;
   }
 
 }

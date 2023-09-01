@@ -1,0 +1,31 @@
+:host, app-build-table {
+    border: 2px solid black;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex: 1;
+
+    div {
+        flex: 1;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+
+        app-build-table {
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            
+            div {
+                border-right: 2px solid black;
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule, NgForOf } from '@angular/common';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormGeneratorComponent } from 'src/app/components/form-generator/form-generator.component';
-import { Observable, take } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import { DataService, Item, Field } from 'src/app/services/data.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class CustomFormComponent  implements OnInit {
   items$: Observable<Item[]> = this.dataService.getData()
     .pipe(
       take(1),
-      // map((items: Item[]) => [items[0]])
+      map((items: Item[]) => [items[7]])
     );
   items: Item[] = [];
   form: FormGroup = new FormGroup({});

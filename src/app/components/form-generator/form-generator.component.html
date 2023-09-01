@@ -1,4 +1,9 @@
 <div class="field" [formGroup]="form" *ngFor="let field of children; let j = index">
+    <div *ngIf="fieldIsTable(field); else noTable">
+        <app-build-table [children]="[field.children[0]]" [lineItems]="field.children[1]"/>
+    </div>
+
+    <ng-template #noTable>
         <div [formGroupName]="j" class="mb-3">
             <ng-container *ngIf="!field.children">
                 <ng-container *ngIf="field.typeNameShort === 'text'">
@@ -36,4 +41,5 @@
                 </div>
             </ng-container>
         </div>
+    </ng-template>
 </div>

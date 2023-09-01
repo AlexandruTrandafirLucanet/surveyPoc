@@ -1,0 +1,249 @@
+[
+  {
+    "itemKey": "https://xbrl.efrag.org/taxonomy/role-200510",
+    "displayName": "[200510] ESRS2.BP-1 General basis for preparation of sustainability statements",
+    "children": [
+      {
+        "id": "esrs_TargetsRelatedToClimateChangeMitigationAndAdaptationGHGEmissionsReductionTargetsAbstract",
+        "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+        "name": "TargetsRelatedToClimateChangeMitigationAndAdaptationGHGEmissionsReductionTargetsAbstract",
+        "substitutionGroup": "Item",
+        "typeNameShort": "string",
+        "isNillable": true,
+        "isAbstract": true,
+        "periodType": "Duration",
+        "label": "Targets related to climate change mitigation and adaptation - GHG emissions reduction targets [abstract]",
+        "enums": null,
+        "children": [
+          {
+            "id": "esrs_TargetsRelatedToClimateChangeMitigationAndAdaptationGHGEmissionsReductionTargetsTable",
+            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+            "name": "TargetsRelatedToClimateChangeMitigationAndAdaptationGHGEmissionsReductionTargetsTable",
+            "substitutionGroup": "HypercubeItem",
+            "typeNameShort": "string",
+            "isNillable": true,
+            "isAbstract": true,
+            "periodType": "Duration",
+            "label": "Targets related to climate change mitigation and adaptation - GHG emissions reduction targets [table]",
+            "enums": null,
+            "children": [
+              {
+                "id": "esrs_ReportingScopeAxis",
+                "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                "name": "ReportingScopeAxis",
+                "substitutionGroup": "DimensionItem",
+                "typeNameShort": "string",
+                "isNillable": true,
+                "isAbstract": true,
+                "periodType": "Duration",
+                "label": "Reporting scope [axis]",
+                "enums": null,
+                "children": [
+                  {
+                    "id": "esrs_ReportingScopeMember",
+                    "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                    "name": "ReportingScopeMember",
+                    "substitutionGroup": "Item",
+                    "typeNameShort": "domain",
+                    "isNillable": true,
+                    "isAbstract": true,
+                    "periodType": "Duration",
+                    "label": "Reporting scope [member]",
+                    "enums": null,
+                    "children": [
+                      {
+                        "id": "esrs_BaselineYearMember",
+                        "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                        "name": "BaselineYearMember",
+                        "substitutionGroup": "Item",
+                        "typeNameShort": "domain",
+                        "isNillable": true,
+                        "isAbstract": true,
+                        "periodType": "Duration",
+                        "label": "Baseline year [member]",
+                        "enums": null,
+                        "children": null
+                      },
+                      {
+                        "id": "esrs_MilestonesAndTargetYearsMember",
+                        "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                        "name": "MilestonesAndTargetYearsMember",
+                        "substitutionGroup": "Item",
+                        "typeNameShort": "domain",
+                        "isNillable": true,
+                        "isAbstract": true,
+                        "periodType": "Duration",
+                        "label": "Milestones and target years [member]",
+                        "enums": null,
+                        "children": [
+                          {
+                            "id": "esrs_Milestone2025YearMember",
+                            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                            "name": "Milestone2025YearMember",
+                            "substitutionGroup": "Item",
+                            "typeNameShort": "domain",
+                            "isNillable": true,
+                            "isAbstract": true,
+                            "periodType": "Duration",
+                            "label": "2025 [member]",
+                            "enums": null,
+                            "children": null
+                          },
+                          {
+                            "id": "esrs_Milestone2030YearMember",
+                            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                            "name": "Milestone2030YearMember",
+                            "substitutionGroup": "Item",
+                            "typeNameShort": "domain",
+                            "isNillable": true,
+                            "isAbstract": true,
+                            "periodType": "Duration",
+                            "label": "2030 [member]",
+                            "enums": null,
+                            "children": null
+                          },
+                          {
+                            "id": "esrs_Milestone2035YearMember",
+                            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                            "name": "Milestone2035YearMember",
+                            "substitutionGroup": "Item",
+                            "typeNameShort": "domain",
+                            "isNillable": true,
+                            "isAbstract": true,
+                            "periodType": "Duration",
+                            "label": "2035 [member]",
+                            "enums": null,
+                            "children": null
+                          },
+                          {
+                            "id": "esrs_Milestone2040YearMember",
+                            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                            "name": "Milestone2040YearMember",
+                            "substitutionGroup": "Item",
+                            "typeNameShort": "domain",
+                            "isNillable": true,
+                            "isAbstract": true,
+                            "periodType": "Duration",
+                            "label": "2040 [member]",
+                            "enums": null,
+                            "children": null
+                          },
+                          {
+                            "id": "esrs_Milestone2045YearMember",
+                            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                            "name": "Milestone2045YearMember",
+                            "substitutionGroup": "Item",
+                            "typeNameShort": "domain",
+                            "isNillable": true,
+                            "isAbstract": true,
+                            "periodType": "Duration",
+                            "label": "2045 [member]",
+                            "enums": null,
+                            "children": null
+                          },
+                          {
+                            "id": "esrs_Milestone2050YearMember",
+                            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                            "name": "Milestone2050YearMember",
+                            "substitutionGroup": "Item",
+                            "typeNameShort": "domain",
+                            "isNillable": true,
+                            "isAbstract": true,
+                            "periodType": "Duration",
+                            "label": "2050 [member]",
+                            "enums": null,
+                            "children": null
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "esrs_TargetsRelatedToClimateChangeMitigationAndAdaptationGHGEmissionsReductionTargetsLineItems",
+            "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+            "name": "TargetsRelatedToClimateChangeMitigationAndAdaptationGHGEmissionsReductionTargetsLineItems",
+            "substitutionGroup": "Item",
+            "typeNameShort": "string",
+            "isNillable": true,
+            "isAbstract": true,
+            "periodType": "Duration",
+            "label": "Targets related to climate change mitigation and adaptation - GHG emissions reduction targets [line items]",
+            "enums": null,
+            "children": [
+              {
+                "id": "esrs_GrossGreenhouseGasEmissions",
+                "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                "name": "GrossGreenhouseGasEmissions",
+                "substitutionGroup": "Item",
+                "typeNameShort": "ghgEmissions",
+                "isNillable": true,
+                "isAbstract": false,
+                "periodType": "Duration",
+                "label": "Gross greenhouse gas emissions",
+                "enums": null,
+                "children": [
+                  {
+                    "id": "esrs_GrossScope1GreenhouseGasEmissions",
+                    "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                    "name": "GrossScope1GreenhouseGasEmissions",
+                    "substitutionGroup": "Item",
+                    "typeNameShort": "ghgEmissions",
+                    "isNillable": true,
+                    "isAbstract": false,
+                    "periodType": "Duration",
+                    "label": "Gross Scope 1 greenhouse gas emissions",
+                    "enums": null,
+                    "children": null
+                  },
+                  {
+                    "id": "esrs_GrossLocationBasedScope2GreenhouseGasEmissions",
+                    "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                    "name": "GrossLocationBasedScope2GreenhouseGasEmissions",
+                    "substitutionGroup": "Item",
+                    "typeNameShort": "ghgEmissions",
+                    "isNillable": true,
+                    "isAbstract": false,
+                    "periodType": "Duration",
+                    "label": "Gross location-based Scope 2 greenhouse gas emissions",
+                    "enums": null,
+                    "children": null
+                  },
+                  {
+                    "id": "esrs_GrossMarketBasedScope2GreenhouseGasEmissions",
+                    "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                    "name": "GrossMarketBasedScope2GreenhouseGasEmissions",
+                    "substitutionGroup": "Item",
+                    "typeNameShort": "ghgEmissions",
+                    "isNillable": true,
+                    "isAbstract": false,
+                    "periodType": "Duration",
+                    "label": "Gross market-based Scope 2 greenhouse gas emissions",
+                    "enums": null,
+                    "children": null
+                  },
+                  {
+                    "id": "esrs_GrossScope3GreenhouseGasEmissions",
+                    "ns": "https://xbrl.efrag.org/taxonomy/draft-esrs/2022-11-22",
+                    "name": "GrossScope3GreenhouseGasEmissions",
+                    "substitutionGroup": "Item",
+                    "typeNameShort": "ghgEmissions",
+                    "isNillable": true,
+                    "isAbstract": false,
+                    "periodType": "Duration",
+                    "label": "Gross Scope 3 greenhouse gas emissions",
+                    "enums": null,
+                    "children": null
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
