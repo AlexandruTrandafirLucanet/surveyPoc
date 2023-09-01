@@ -19,7 +19,7 @@ export class CustomFormComponent  implements OnInit {
   items$: Observable<Item[]> = this.dataService.getData()
     .pipe(
       take(1),
-      map((items: Item[]) => [items[7]])
+      // map((items: Item[]) => [items[7]])
     );
   items: Item[] = [];
   form: FormGroup = new FormGroup({});

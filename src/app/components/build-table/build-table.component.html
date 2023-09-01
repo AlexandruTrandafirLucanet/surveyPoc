@@ -4,7 +4,7 @@
 
 <ng-container *ngFor="let child of children">
     <div>
-        {{child.label}}
+        <span>{{child.label}}</span>
         <ng-container *ngIf="child.children">
             <app-build-table [children]="child.children" [lineItems]="lineItems" />
         </ng-container>
