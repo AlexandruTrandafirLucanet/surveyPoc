@@ -10,6 +10,7 @@ import { Field } from 'src/app/services/data.service';
   styleUrls: ['./build-table.component.scss']
 })
 export class BuildTableComponent {
+  @Input({required: false}) root: boolean = false;
   @Input({required: true}) children!: Field[];
-  @Input() lineItems!: Field;
+  @Input({required: false}) lineItems!: Field;
 }

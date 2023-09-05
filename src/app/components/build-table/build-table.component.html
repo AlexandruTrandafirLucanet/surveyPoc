@@ -1,38 +1,36 @@
 <!-- {{children | json}} -->
-<!-- {{lineItems | json}} -->
-
-
-<ng-container *ngFor="let child of children">
-    <div>
-        <span>{{child.label}}</span>
-        <ng-container *ngIf="child.children">
-            <app-build-table [children]="child.children" [lineItems]="lineItems" />
-        </ng-container>
-    </div>
-    
-<!-- 
-    <div *ngFor="let subchild of child.children">
-        <ng-container *ngIf="!subchild.children; else buildTable">
-            <div  class="table">{{subchild.label}}</div>
-        </ng-container>
-        <ng-template #buildTable>
-            <div  class="table">{{subchild.label}}</div>
-            
-        </ng-template>
-    </div>
-     -->
+<div class="table-head">
+    <ng-container *ngIf="root">
+        <div>
+            <span>{{children[0].label}}</span>
+        </div>
     </ng-container>
-
-<!-- 
-<ng-container *ngFor="let child of children">
-    <div class="table">{{child.label}}</div>
-    <div *ngFor="let subchild of child.children">
-        <ng-container *ngIf="!subchild.children; else buildTable">
-            <div  class="table">{{subchild.label}}</div>
+    
+    <ng-container *ngFor="let child of children">
+        <div>
+            <span>{{child.label}}</span>
+            <ng-container *ngIf="child.children">
+                <app-build-table [children]="child.children" [lineItems]="lineItems" />
+            </ng-container>
+        </div>
+    </ng-container>
+</div>
+<div class="table-body" *ngIf="root">
+    <div>
+        <ng-container *ngFor="let child of lineItems.children">
+            <div>
+                <span>{{child.label}}</span>
+                <ng-container *ngIf="child.children">
+                    <app-build-table [children]="child.children" [lineItems]="lineItems" />
+                </ng-container>
+            </div>
         </ng-container>
-        <ng-template #buildTable>
-            <div  class="table">{{subchild.label}}</div>
-            <app-build-table [children]="subchild.children" [lineItems]="lineItems" />
-        </ng-template>
     </div>
-</ng-container> -->
+    <div>
+        <ng-container *ngFor="let child of lineItems.children">
+            <div>
+                
+            </div>
+        </ng-container>
+    </div>
+</div>

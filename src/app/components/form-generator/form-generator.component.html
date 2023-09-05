@@ -1,6 +1,6 @@
 <div class="field" [formGroup]="form" *ngFor="let field of children; let j = index">
     <div *ngIf="fieldIsTable(field); else noTable">
-        <app-build-table [children]="[field.children[0]]" [lineItems]="field.children[1]"/>
+        <app-build-table [root]="true" [children]="[field.children[0]]" [lineItems]="field.children[1]"/>
     </div>
 
     <ng-template #noTable>

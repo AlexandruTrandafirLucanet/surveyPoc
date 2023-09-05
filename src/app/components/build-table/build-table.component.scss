@@ -1,33 +1,131 @@
 :host, app-build-table {
-    border: 2px solid black;
     font-size: 0.9em;
     font-family: sans-serif;
     margin: 0;
-    display: flex;
-    align-items: stretch;
     flex: 1;
     overflow: auto;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 100%;
 
-    div {
+    span {
+        display: block;
+        padding: 10px;
+    }
+    
+
+    .table-head {
+        display: flex;
+        align-items: stretch;
         flex: 1;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        span {
-            padding: 10px;
-        }
+        border-bottom: 2px solid black;
 
-        app-build-table {
-            border-right: none;
-            border-bottom: none;
-            border-left: none;
-            
-            div {
+        div:not(.table-head):not(.table-body) {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 50%;
+    
+            &:first-child {
                 border-right: 2px solid black;
+            }
+    
+            &:last-child {
+                border-right: none;
+            }
+
+            app-build-table {
+                display: flex;
+                border-right: none;
+                border-bottom: none;
+                border-left: none;
+                
+                .table-head {
+                    border-bottom: none;
+
+                    div {
+                        border-right: 2px solid black;
+                        max-width: none;
+        
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .table-body {
+        display: flex;
+        align-items: stretch;
+        flex: 1;
+
+        & > div:not(.table-head):not(.table-body) {
+            flex: 1;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            div {
+                border-bottom: 2px solid black;
+                flex: 1;
+
+                span {
+                    flex: 1;
+                }
+
+                app-build-table {
+                    border-right: none;
+                    border-bottom: none;
+                    border-top: none;
+
+                    div div {
+                        border-bottom: none;
+                        border-right: 2px solid black;
+
+                        &:last-child {
+                            border-right: none;
+                        }
+
+                        app-build-table {
+                            div div {
+                                border-right: 2px solid black;
+
+                                &:last-child {
+                                    border-right: none;
+                                }
+                            }
+                        }
+                    }
+                }
 
                 &:last-child {
+                    border-bottom: none;
+                }
+            }
+
+            &:first-child {
+                border-right: 2px solid black;
+
+                div app-build-table {
+                    border-top: 2px solid black;
                     border-right: none;
+                    border-left: none;
+                    border-bottom: none;
+                }
+            }
+    
+            &:last-child {
+                border-right: none;
+
+                app-build-table {
+                    border-left: none;
+                    border-bottom: none;
+                    border-top: none;
                 }
             }
         }
